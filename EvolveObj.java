@@ -30,8 +30,6 @@ public class EvolveObj
         int nodes = old.get(location).getSize();
         double[] x = new double[nodes];
         double[] y = new double[nodes];
-        double[] w = new double[nodes];
-        double[] t = new double[nodes];
         for(int j=0;j<nodes;j++)
         {
             int tempX;
@@ -43,7 +41,7 @@ public class EvolveObj
             }
             else
             {
-                tempX = (int)old.get(location).getX(j) - 2 + rand.nextInt(5);
+                tempX = (int)old.get(location).getX(j) + rand.nextInt(3);
                 tempY = (int)old.get(location).getY(j) - 2 + rand.nextInt(5);
             }
             x[j] = tempX;
@@ -53,9 +51,9 @@ public class EvolveObj
             
         Obj temp;
         if(nameNumber == 0)
-            temp = new Obj(old.get(location).getName() + "",x,y,w,t,0,0,0,old.get(location).getEvolution() + 1);
+            temp = new Obj(old.get(location).getName() + "",x,y,0,0,0,old.get(location).getEvolution() + 1);
         else
-            temp = new Obj(old.get(location).getName() + "'",x,y,w,t,0,0,0,old.get(location).getEvolution() + 1);
+            temp = new Obj(old.get(location).getName() + "'",x,y,0,0,0,old.get(location).getEvolution() + 1);
         objects.add(temp);
     }   
 }

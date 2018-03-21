@@ -29,8 +29,6 @@ public class CreateObj
             int nodes = rand.nextInt(17) + 4;
             double[] x = new double[nodes];
             double[] y = new double[nodes];
-            double[] w = new double[nodes];
-            double[] t = new double[nodes];
             for(int j=0;j<nodes;j++)
             {
                 int tempX = rand.nextInt(51);
@@ -51,7 +49,7 @@ public class CreateObj
             }
             for(int z=0;z<nodes;z++)
                 y[z] += 99;
-            Obj temp = new Obj(generateName(),x,y,w,t,0,0,0,0);
+            Obj temp = new Obj(generateName(),x,y,0,0,0,0);
             objects.add(temp);
         }
     }   

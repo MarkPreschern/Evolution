@@ -3,17 +3,15 @@ package Evolution;
 public class Obj
 {
     private String name;
-    private double[] x, y, w, t;
+    private double[] x, y;
     private double dx, dy;
     private double distance;
     private int evolution;
-    public Obj(String name, double[] x, double[] y, double[] w, double[] t, double dx, double dy, double distance, int evolution)
+    public Obj(String name, double[] x, double[] y, double dx, double dy, double distance, int evolution)
     {
         this.name = name;
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.t = t;
         this.dx = dx;
         this.dy = dy;
         this.distance = distance;
@@ -25,10 +23,6 @@ public class Obj
         return x;}
     public double[] getY(){
         return y;}
-    public double getW(int value){
-        return w[value];}
-    public double getT(int value){
-        return t[value];}
     public double getDX(){
         return dx;}
     public double getDY(){
@@ -53,10 +47,6 @@ public class Obj
         x = value;}
     public void setY(double[] value){
         y = value;}
-    public void setW(double[] value){
-        w = value;}
-    public void setT(double[] value){
-        t = value;}
     public void setDX(double value){
         dx = value;}
     public void setDY(double value){

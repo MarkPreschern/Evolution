@@ -85,7 +85,7 @@ public class DisplayObj extends JPanel implements ActionListener
         layout.fillRect(0,0,2,getHeight());
         layout.fillRect(1278,0,2,getHeight());
         
-        for(int i=0;i<=300;i++)
+        /*for(int i=0;i<=300;i++)
         {
             layout.setColor(Color.red);
             int x = i - 182;
@@ -93,7 +93,7 @@ public class DisplayObj extends JPanel implements ActionListener
                 layout.fill(new Ellipse2D.Double(i,594 - .007*x*x,1,1));
             else
                 layout.fill(new Ellipse2D.Double(i,594 - (.013 - .00003*i)*x*x,1,1));
-        }
+        }*/
         
         Graphics2D leaderboard = (Graphics2D) g;
         leaderboard.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -199,6 +199,9 @@ public class DisplayObj extends JPanel implements ActionListener
                     {
                         graph.fill(new Ellipse2D.Double((int)cords[i+1][0],cords[i+1][1],2,2));
                         graph.fill(new Ellipse2D.Double((int)cords2[i+1][0],cords2[i+1][1],2,2));
+                        
+                        graph.drawString("Max Height",(int)cords[i+1][0] + 5,(int)cords[i+1][1]);
+                        graph.drawString("Mean Height",(int)cords2[i+1][0] + 5,(int)cords2[i+1][1]);
                     }
                 }
             }
@@ -329,30 +332,11 @@ public class DisplayObj extends JPanel implements ActionListener
         if(endSimulation == false)
         {
             repaint();
-            updateVelocity();
             actions();
             gravity();
             contains();
             checkGeneration();
             checkHeight();
-        }
-    }
-    public void updateVelocity()
-    //updates velocity 
-    {
-        for(int i=0;i<obj.size();i++)
-        {
-            if(rotTime[i] != 0)
-            {
-                for(int j=0;j<obj.get(i).getSize();j++)
-                {                
-                    double theta = (rotTimer(i) % obj.get(i).getT(j))*360;
-                    double addX = obj.get(i).getW(j) * Math.cos(Math.toRadians(theta));
-                    double addY = obj.get(i).getW(j) * Math.sin(Math.toRadians(theta));
-                    obj.get(i).addDX(addX);
-                    obj.get(i).addDY(addY);
-                }
-            }
         }
     }
     public void actions()
@@ -437,8 +421,7 @@ public class DisplayObj extends JPanel implements ActionListener
     //makes a new generation of obj's and adds distance & name to database
     {
         System.out.println("Evolution Depth: " + evolutionDepth);
-        System.out.println("Trial: " + trialsCounter);
-        
+        System.out.println("Trial: " + trialsCounter);        
         trialsCounter--;
         
         boolean add = true;
