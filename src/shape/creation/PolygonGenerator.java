@@ -101,7 +101,7 @@ public class PolygonGenerator implements GeneratorModel {
     for (int i = 0; i < nodes; i++) {
       double length = 5 + Math.random() * 20;
       x[i] = Math.cos(angle.get(i)) * length + 25;
-      y[i] = Math.sin(angle.get(i)) * length + 150;
+      y[i] = Math.sin(angle.get(i)) * length + 125;
     }
 
     this.xPoints = x;

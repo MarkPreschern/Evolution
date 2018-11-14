@@ -1,10 +1,4 @@
-package main;
-
-import java.util.ArrayList;
-
 import display.View;
-import shape.representation.Polygon;
-import shape.representation.PolygonBuilder;
 
 /**
  * Creates a new evolution simulation of polygons.

@@ -38,7 +38,7 @@ public class Results extends JPanel {
       int[] xCords = new int[this.polygons.get(i).nPoints];
       int[] yCords = new int[this.polygons.get(i).nPoints];
       for (int j = 0; j < this.polygons.get(i).nPoints; j++) {
-        xCords[j] = (int) this.polygons.get(i).xPoints[j] + (i % 10) * 120 + 20;
+        xCords[j] = (int) this.polygons.get(i).xPoints[j] + (i % 10) * 120 + 60;
         yCords[j] = (int) this.polygons.get(i).yPoints[j] + (i / 10) * 120 + 50 - 100;
       }
       java.awt.Polygon poly = new java.awt.Polygon(xCords, yCords, this.polygons.get(i).nPoints);
@@ -48,11 +48,11 @@ public class Results extends JPanel {
       main.setColor(Color.black);
       main.draw(poly);
 
-      String str1 = this.polygons.get(i).getName();
-      String str2 = Integer.toString((int) this.polygons.get(i).getDistance());
-      String str3 = Integer.toString(this.means.get(i));
+      String str1 = "Name: " + this.polygons.get(i).getName();
+      String str2 = "Distance: " + Integer.toString((int) this.polygons.get(i).getDistance());
+      String str3 = "Mean: " + Integer.toString(this.means.get(i));
       main.setColor(Color.black);
-      Font font = new Font("Verdana", Font.BOLD, 15);
+      Font font = new Font("Verdana", Font.BOLD, 10);
       main.setFont(font);
       main.drawString(str1, (i % 10) * 120 + 50, ((int) i / 10) * 120 + 40);
       main.drawString(str2, (i % 10) * 120 + 50, ((int) i / 10) * 120 + 120);
